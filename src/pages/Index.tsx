@@ -18,9 +18,8 @@ const MOCK_BADGES = [
 ];
 
 const MOCK_AWARDS = [
-  { id: 1, name: "Best Performance 2023", date: "2023-12-01", icon: "🏆" },
-  { id: 2, name: "Innovation Award", date: "2023-11-15", icon: "💡" },
-  { id: 3, name: "Community Champion", date: "2023-10-30", icon: "🌟" },
+  { id: 1, name: "Electrolux Gift Voucher", description: "100 SEK", icon: "🎁" },
+  { id: 2, name: "Super Beta Tester", description: "Early Access Program", icon: "🔍" }
 ];
 
 const Index = () => {
@@ -82,7 +81,7 @@ const Index = () => {
                   <div>
                     <h3 className="font-semibold text-white">{award.name}</h3>
                     <p className="text-sm text-white/60">
-                      {new Date(award.date).toLocaleDateString()}
+                      {award.description}
                     </p>
                   </div>
                 </div>
