@@ -12,9 +12,9 @@ const CURRENT_USER = {
 };
 
 const MOCK_BADGES = [
-  { id: 1, name: "Early Adopter", description: "Joined in the first month", icon: "🌟" },
-  { id: 2, name: "Top Contributor", description: "Made 100+ contributions", icon: "👑" },
-  { id: 3, name: "Problem Solver", description: "Solved 50+ challenges", icon: "🎯" },
+  { id: 1, name: "Water Saver", description: "Saved 1000L of water", icon: "💧" },
+  { id: 2, name: "Carbon Reducer", description: "Reduced 1000kg of CO2", icon: "🌱" },
+  { id: 3, name: "Eco Champion", description: "Eco User of the Month", icon: "🌍" },
 ];
 
 const MOCK_AWARDS = [
