@@ -3,18 +3,13 @@ import LeaderboardEntry from "@/components/LeaderboardEntry";
 import { Badge } from "@/components/ui/badge";
 import { Trophy } from "lucide-react";
 
-const MOCK_DATA = [
-  { name: "Alex Thompson", score: 2500, avatar: "https://i.pravatar.cc/150?img=1" },
-  { name: "Sarah Chen", score: 2350, avatar: "https://i.pravatar.cc/150?img=2" },
-  { name: "Michael Rodriguez", score: 2200, avatar: "https://i.pravatar.cc/150?img=3" },
-  { name: "Emma Wilson", score: 2100, avatar: "https://i.pravatar.cc/150?img=4" },
-  { name: "James Lee", score: 2000, avatar: "https://i.pravatar.cc/150?img=5" },
-  { name: "Lisa Anderson", score: 1950, avatar: "https://i.pravatar.cc/150?img=6" },
-  { name: "David Kim", score: 1900, avatar: "https://i.pravatar.cc/150?img=7" },
-  { name: "Anna Martinez", score: 1850, avatar: "https://i.pravatar.cc/150?img=8" },
-  { name: "Chris Taylor", score: 1800, avatar: "https://i.pravatar.cc/150?img=9" },
-  { name: "Sophie Brown", score: 1750, avatar: "https://i.pravatar.cc/150?img=10" },
-];
+// Mock data for the current user (we'll only show this one)
+const CURRENT_USER = {
+  name: "Alex Thompson",
+  score: 2500,
+  rank: 1,
+  avatar: "https://i.pravatar.cc/150?img=1"
+};
 
 const MOCK_BADGES = [
   { id: 1, name: "Early Adopter", description: "Joined in the first month", icon: "🌟" },
@@ -42,21 +37,21 @@ const Index = () => {
 
         <Tabs defaultValue="ranks" className="w-full">
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="ranks">Ranks</TabsTrigger>
+            <TabsTrigger value="ranks">Rank</TabsTrigger>
             <TabsTrigger value="badges">Badges</TabsTrigger>
             <TabsTrigger value="awards">Awards</TabsTrigger>
           </TabsList>
 
           <TabsContent value="ranks" className="space-y-3">
-            {MOCK_DATA.map((player, index) => (
-              <LeaderboardEntry
-                key={player.name}
-                rank={index + 1}
-                name={player.name}
-                score={player.score}
-                avatar={player.avatar}
-              />
-            ))}
+            <div className="text-center mb-4">
+              <p className="text-white/60">Your current ranking</p>
+            </div>
+            <LeaderboardEntry
+              rank={CURRENT_USER.rank}
+              name={CURRENT_USER.name}
+              score={CURRENT_USER.score}
+              avatar={CURRENT_USER.avatar}
+            />
           </TabsContent>
 
           <TabsContent value="badges" className="grid grid-cols-1 md:grid-cols-2 gap-4">
